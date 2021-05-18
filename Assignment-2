@@ -1,0 +1,31 @@
+import java.util.Scanner;
+public class StringRecursion
+{
+    //Recursive function that checks
+    //whether the string is palindrome or not
+    static boolean checkPalindrome(String str)
+    {
+       
+        if(str.length() == 0 || str.length() == 1)
+            return true;
+        //If string has multiple characters
+        //Check whether first and last characters are same or not
+        if(str.charAt(0) == str.charAt(str.length()-1))
+            return checkPalindrome(str.substring(1, str.length()-1));
+        return false;
+    }  
+    // Driver Code
+    public static void main(String args[])
+    {
+        //Take input from the user
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the String :");
+        String input = sc.nextLine();   //Input the string
+        //Check whether palindrome or not
+        if (checkPalindrome(input))
+            System.out.println(input+" is palindrome");
+        else
+            System.out.println(input+ " is not a palindrome");
+    }    
+}
+
